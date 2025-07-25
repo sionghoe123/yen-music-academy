@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>TRY LESSON NOW - Yen Music Academy</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="main.js"></script>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; }
+    * { box-sizing: border-box; }
+
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: skyblue;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: blue;
+    }
+
+    .form {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin: 40px auto;
+      max-width: 500px;
+    }
+
+    blockquote {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body class="cont">
+  <nav>
+    <img src="Yen Music Academy logo4.png">
+    <h1>Yen Music Academy</h1>
+    <div class="menu">
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="Music Classes.html">Music Classes ▾</a>
+          <ul class="dropdown-content">
+            <li><a href="Piano.html">Piano</a></li>
+            <li><a href="Guitar.html">Guitar</a></li>
+            <li><a href="Ukulele.html">Ukulele</a></li>
+          </ul>
+        </li>
+        <li><a href="Gallery.html">Gallery</a></li>
+        <li><a href="Contact Us.html">Contact Us</a></li>
+        <li><a href="Product.html">Product</a></li>
+        <li><a href="TRY LESSON NOW.html">TRY LESSON NOW</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="gallery">
+      <h2>Book Your First Free Trial Class Now!</h2>
+      <p>Wanna learn and play with us? Find out the details of each course or book an appointment for a first trial session!</p>
+    </section>
+
+    <section class="try">
+      <h4>Teaching Hours</h4>
+      <blockquote>Monday – Saturday:<br>10:00 AM – 10:00 PM</blockquote>
+      <blockquote>Sunday:<br>9:00 AM – 7:00 PM</blockquote>
+    </section>
+
+    <h4 style="text-align:center;">Contact Form</h4>
+    <div class="form">
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+
+        <label for="email">Email Address</label>
+        <input type="text" id="email" name="email" placeholder="Your email address.." required>
+
+        <label for="contact">Contact Number</label>
+        <input type="text" id="contact" name="contact" placeholder="Your contact number.." required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Leave a message..." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align:center; padding: 20px;">&copy; 2025 Yen Music Academy</p>
+  </footer>
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    function sendEmail() {
+      Email.send({
+        Host: "smtp.elasticemail.com",
+        Username: "sionghoe7706@gmail.com",
+        Password: "abc",
+        To: "sionghoe7706@gmail.com",
+        From: document.getElementById("email").value,
+        Subject: "New Contact Form Enquiry",
+        Body:
+          "Name: " + document.getElementById("fname").value + " " + document.getElementById("lname").value +
+          "<br>Email: " + document.getElementById("email").value +
+          "<br>Contact: " + document.getElementById("contact").value +
+          "<br>Message: " + document.getElementById("message").value
+      }).then(
+        message => alert("Submitted Successfully. Thank you!")
+      );
+    }
+  </script>
+</body>
+</html>
+
